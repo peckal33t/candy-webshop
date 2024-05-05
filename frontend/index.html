@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bortakväll</title>
+
+    <script
+      src="https://kit.fontawesome.com/8c68e8d636.js"
+      crossorigin="anonymous"
+    ></script>
+
+  </head>
+  <body data-bs-theme="dark">
+    <header>
+      <h1>Bortakväll</h1>
+      <nav> <button type="button" class="btn btn-outline-light" id="cart-btn"><i class="fa-solid fa-cart-shopping"></i></button> </nav>
+    </header>
+
+    <section class="hide" id="pop-up-section">
+      <h3>Pop-up</h3>
+    </section>
+
+    <section class="hide" id="alert-section">
+      <div class="alert alert-warning" role="alert">
+        <button class="btn btn-outline-danger" id="alertBtn">❌</button>
+            <h3>Ooops!</h3>
+            <p>Beställningen misslyckades. Kolla över din beställning samt internetuppkoppling och försök igen.</p>
+        </div>
+    </section>
+
+    <section class="hide" id="receipt-section">
+      <h3>Receipt</h3>
+    </section>
+
+    <main>
+    </main>
+
+    <aside>
+      <div id="cart" class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" aria-labelledby="offcanvasScrollingLabel">
+        <div class="offcanvas-header">
+          <h2 class="offcanvas-title" id="offcanvasScrollingLabel">Varukorg</h2>
+          <button id="cart-close-btn" type="button" class="btn btn-outline-danger" data-bs-dismiss="offcanvas" aria-label="Close">❌</button>
+        </div>
+
+
+        <div id="cart-body" class="offcanvas-body">
+          <ul id="cart-list" class="list-group">
+          </ul>
+
+          <p class="card-text cart-item-text" id="number-of-items">0 godissorter i varukorgen</p>
+          <p class="card-text cart-item-text" id="price-total">Such empty varukorg, many sadz</p>
+
+          <button type="button" id="orderBtn" class="btn btn-outline-info">Lägg beställning</button>
+        </div>
+      </div>
+    </aside>
+
+    <section id="cartCheckout" class="hide">
+      <div class="container">
+        <div class="row g-5">
+          <div class="col-md-5 col-lg-4 order-md-last">
+            <h4 class="d-flex justify-content-between align-items-center mb-3">
+              <span>Din varukorg</span>
+              <span class="badge rounded-pill" id="checkout-cart-num-items"></span>
+            </h4>
+            <ul class="list-group mb-3" id="checkout-cart"> 
+            </ul>
+          </div>
+          <div class="col-md-7 col-lg-8">
+            <h4 class="mb-3">Faktureringsadress</h4>
+            <form id="checkForm" class="needs-validation" novalidate>
+              <div class="row g-3">
+                <div class="col-sm-6">
+                  <label for="firstName" class="form-label">Förnamn</label>
+                  <input type="text" class="form-control" id="firstName" placeholder="Ditt förnamn" value="" required>
+                  <div class="invalid-feedback">
+                    Giltigt förnamn krävs
+                  </div>
+                </div>
+    
+                <div class="col-sm-6">
+                  <label for="lastName" class="form-label">Efternamn</label>
+                  <input type="text" class="form-control" id="lastName" placeholder="Ditt efternamn" value="" required>
+                  <div class="invalid-feedback">
+                    Giltigt efternamn krävs
+                  </div>
+                </div>
+  
+                <div class="col-12">
+                  <label for="email" class="form-label">E-postadress<span class="text-muted"></span></label>
+                  <input type="email" class="form-control" id="email" placeholder="Din e-postadress" required>
+                  <div class="invalid-feedback">
+                    Vänligen ange en giltig e-postadress
+                  </div>
+                </div>
+    
+                <div class="col-12">
+                  <label for="address" class="form-label">Adress</label>
+                  <input type="text" class="form-control" id="address" placeholder="Din adress" required>
+                  <div class="invalid-feedback">
+                    Vänligen ange din adress
+                  </div>
+                </div>              
+    
+                <div class="col-md-3">
+                  <label for="zip" class="form-label">Postnummer</label>
+                  <input type="text" maxlength="6" pattern="(\d\s?){5}" class="form-control" id="zip" placeholder="Ditt postnummer" required>
+                  <div class="invalid-feedback">
+                    Giltigt postnummer krävs
+                  </div>
+                </div>
+
+                <div class="col-md-4">
+                  <label for="state" class="form-label">Ort</label>
+                  <input type="text" pattern="[^0-9]*" class="form-control" id="state" placeholder="Din ort" required>
+                  <div class="invalid-feedback">
+                    Ange en giltig ort
+                  </div>
+                </div>
+
+                <div class="col-md-5">
+                  <label for="country" class="form-label">Land</label>
+                  <input type="text" pattern="[^0-9]*" class="form-control" id="country" placeholder="Ditt land" required>
+                  <div class="invalid-feedback">
+                    Ange ett giltigt land
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <label for="phone" class="form-label">Telefonnummer <span class="text-muted">(Valfritt)</span></label>
+                  <input type="text" class="form-control" id="phone" placeholder="Ditt telefonnummer">
+                </div>
+              </div>
+    
+              <hr class="my-4">
+              <button id="check-out-button" class="w-100 btn btn-outline-info btn btn-lg" type="submit">Lägg beställning
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="last-section" class="hide">
+      <h3>Last Section</h3>
+    </section>
+
+    <footer>
+      &copy; Ann, Josefin och Petar
+    </footer>
+
+    <a id="leet" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">.</a>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,330 @@
+@font-face {
+  font-family: "Silkscreen";
+  src: url(assets/fonts/Silkscreen-Bold.ttf);
+}
+
+* {
+  text-align: center;
+  box-sizing: border-box;
+}
+
+body {
+  margin-bottom: 8rem;
+}
+
+h1 {
+  margin-bottom: 1.5rem;
+  font-family: "Silkscreen", sans-serif;
+  font-size: 2.4rem;
+  cursor: pointer;
+}
+
+h2 {
+  width: 100%;
+  font-size: 1rem;
+  font-style: italic;
+  margin-bottom: 2rem;
+}
+
+header {
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+
+  position: sticky;
+  top: 0;
+  z-index: 1;
+
+  background-color: lightseagreen;
+}
+
+img {
+  width: 100%;
+}
+
+main {
+  margin: 4vh 5vw;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+}
+
+
+.add-to-cart {
+  margin-bottom: 0.5rem;
+}
+
+.btnWrapper {
+  width: 100%;
+}
+
+.card {
+  max-width: 40vw;
+  margin: 0.3rem;
+}
+
+.cart-item-img {
+  width: 100%;
+}
+
+.cart-item-img-box {
+  max-width: 30%;
+}
+
+.cart-item-text {
+  text-align: left;
+  padding-left: 1rem;
+  margin-bottom: 0.4rem;
+  max-width: 100%;
+}
+
+.cart-li {
+  text-align: left;
+  padding: 1rem 0;
+  
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  
+  border-bottom: 0.1rem solid white;
+}
+
+.cart-li ::marker {
+  list-style: none;
+}
+
+.cart-text-box {
+  width: 60%;
+}
+
+.hide {
+  display: none;
+}
+
+.read-more {
+  text-decoration: underline;
+  color: lightseagreen;
+}
+
+.read-more:hover {
+  color: lightsalmon;
+  cursor: pointer;
+}
+
+.rm-fr-cart-btn {
+  position: relative;
+  font-size: 1.2rem;
+  height: 2rem;
+  width: 2rem;
+  text-align: center;
+  padding: 0;
+}
+
+
+#alertBtn {
+  float: left;
+}
+
+#cart {
+  padding: 1rem;
+  border: none;
+}
+
+#cart-btn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#cart-btn > p {
+  margin-bottom: 0;
+  margin-left: 1rem;
+}
+
+#cart-list {
+  margin-bottom: 2rem;
+}
+
+#cartCheckout {
+  margin: 1.5rem;
+}
+
+#imgWrapper {
+  max-width: 18rem;
+  margin: 1rem;
+}
+
+#last-section {
+  position: absolute;
+  top: 1rem;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 1;
+  padding: 1.4rem;
+  background-color:#282b2f;
+  border-radius: 1rem;
+  width: 90vw;
+  max-height: 90vh;
+}
+
+#lastSectionBtn {
+  float: right;
+}
+
+#lastSectionContent {
+  display: flex;
+  flex-direction: row;
+  align-content: space-between;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+#leet {
+  color: #E0E0E0;
+  position: relative;
+  text-align: center;
+  bottom: 1.76rem;
+  right: 4.80rem;
+}
+
+#orderBtn {
+  margin-top: 3rem;
+}
+
+#popUp {
+  display: flex;
+  flex-direction: row;
+  align-content: space-between;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  position: absolute;
+  overflow-y: auto;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 1;
+  padding: 1.4rem;
+  background-color:#212529;
+  border-radius: 1rem;
+  width: 90vw;
+  max-height: 90vh;
+}
+
+#popUpBtn {
+  float: right;
+}
+
+#popupContent {
+  display: flex;
+  flex-direction: row;
+  align-content: space-between;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+#popUpImg {
+  max-width: 100%;
+  border-radius: 0.4rem;
+}
+
+#pop-up-section, #alert-section, #receipt-section {
+  position: sticky;
+  top: 2rem;
+  z-index: 1;
+  background-color:#212529;
+}
+
+#popupContentReceipt {
+  padding: 1.5rem;
+}
+
+#receipt-section {
+  margin: 2rem;
+  padding-top: 0.8rem;
+}
+
+
+
+@media screen and (min-width: 768px) {
+  h1 {
+    font-size: 4rem;
+  }
+
+  header {
+    padding-top: 4rem;
+  }
+
+  .card {
+    max-width: 26vw;
+    margin: 0.8rem;
+  }
+  
+  #cart-body {
+    text-align: right;
+  }
+
+  #cart-btn {
+    font-size: 2rem;
+  }
+
+  #imgWrapper {
+    max-width: 24rem;
+  }
+
+  #popUp {
+    width: 70vw;
+  }
+
+  #last-section {
+    width: 70vw;
+  }
+}
+
+
+
+@media screen and (min-width: 992px) {
+
+  main {
+    max-width: 80rem;
+    margin: 4vh auto;
+  }
+
+  nav {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+  }
+
+  .card {
+    width: 18vw;
+    max-width: 18rem;
+    margin: 0.8rem;
+  }
+
+  #btnWrapper {
+    width: 100%;
+  }
+  
+  #card-body, #receipt-card-body {
+    max-width: 45%;
+  }
+  
+  #imgWrapper {
+    max-width: 45%;
+  }
+    
+  #popupContent {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 1.2rem;
+  }
+}
